@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import {usePathname} from "next/navigation";
+import Experience from "@/app/portfolio/components/experience";
+import JobsComponent from "@/app/portfolio/components/jobsComponent";
 
 const posts = [
     {
@@ -34,6 +36,7 @@ export default function Page() {
               </li>
           ))}
         </ul>
+        <Experience/>
       </>
   )
 }
