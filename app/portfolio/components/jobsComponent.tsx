@@ -35,11 +35,21 @@ export default function JobsComponent() {
     )
   }
 
-  return (
-      <>
-        <h1>Blorp</h1>
-        {jobsResponse ? <JobsListComponent jobs={jobsResponse.jobs}/> : <h3>Loading... </h3>}
-      </>
+  const JobsDescriptionComponent = (props: JobsComponentsProps) => {
+    const {jobs} = props;
+    return (
+        <>
+          {jobs.map(j => j.id === activeJob ? <p id={j.id.toString()}>{j.description}</p> : null)}
+        </>
+    )
+  }
 
+  return (
+      <section className={"jobs-container"}>
+        {jobsResponse ? <JobsListComponent jobs={jobsResponse.jobs}/> : <h3>Loading jobs.... </h3> }
+        <blockquote className={"job-description-container"}>
+          {jobsResponse ? <JobsDescriptionComponent jobs={jobsResponse.jobs}/> : <h3>Loading descriptions....</h3>}
+        </blockquote>
+      </section>
   )
 }
