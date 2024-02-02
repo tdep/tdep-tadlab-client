@@ -23,6 +23,7 @@ export default function JobsComponent() {
   }
 
   const JobsListComponent = (props: JobsComponentsProps) => {
+    console.log(props)
     const {jobs} = props;
     return (
         <ul>
