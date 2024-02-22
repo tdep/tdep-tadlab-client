@@ -1,19 +1,31 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import {Job, JobsResponse} from "@/app/_types/Job";
 import {getAllJobs, getJobById} from "@/app/portfolio/_api/jobs/route";
 
 export default function JobsComponent() {
   const [jobsResponse, setJobsResponse] = useState<JobsResponse>();
+  const [loading, setLoading] = useState(false);
   const [activeJob, setActiveJob] = useState(1);
+  const jobRef = useRef(jobsResponse);
+
+  //TODO: Figure out how to properly load data from useEffect so it doesn't render 4 times
 
   useEffect(() => {
-    getAllJobs().then(
-        response => {
-          setJobsResponse(response)
-        }
-    ).catch(e => console.log("------>", e))
+    fetchJobs();
   }, []);
 
+  const fetchJobs = () => {
+    setLoading(true);
+    getAllJobs()
+        .then(response => {
+          setJobsResponse(response);
+          setLoading(false);
+          console.log(response)
+        })
+        .catch(e => console.log("----->", e));
+  };
+
+  //TODO: Translate the jobsResponse into Jobs (here?)
   type JobsComponentsProps = {
     jobs: Job[]
   }
@@ -46,10 +58,17 @@ export default function JobsComponent() {
 
   return (
       <section className={"jobs-container"}>
-        {jobsResponse ? <JobsListComponent jobs={jobsResponse.jobs}/> : <h3>Loading jobs.... </h3> }
-        <blockquote className={"job-description-container"}>
-          {jobsResponse ? <JobsDescriptionComponent jobs={jobsResponse.jobs}/> : <h3>Loading descriptions....</h3>}
-        </blockquote>
+        {loading ? (
+            <div>...Jobs Loading.....</div>
+        ) : (
+            <div>
+              <span>"Not Loading"...</span>
+            </div>
+        )}
+        {/*{jobsResponse ? <JobsListComponent jobs={jobsResponse.jobs}/> : <h3>Loading jobs.... </h3> }*/}
+        {/*<blockquote className={"job-description-container"}>*/}
+        {/*  {jobsResponse ? <JobsDescriptionComponent jobs={jobsResponse.jobs}/> : <h3>Loading descriptions....</h3>}*/}
+        {/*</blockquote>*/}
       </section>
   )
 }
