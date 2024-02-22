@@ -2,29 +2,17 @@ import {JobsResponse} from "@/app/_types/Job";
 
 export const dynamic = 'force-dynamic'
 
-export const marshalResponse = (res: JobsResponse) => {
-  if (res.status === 201) return res.json();
-  if (res.status === 400) return res.json();
-  return Error("Unhandled response code");
-};
-
-export const responseHandler = (response: Response) => {
-  const res = response as JobsResponse;
-
-  return marshalResponse(res);
-};
-
 export async function getAllJobs(): Promise<JobsResponse> {
   const req = await fetch('https://tdep-tadlab-api-713a0d814a93.herokuapp.com/api/v1/jobs', {
     headers: {
       'Content-Type': 'application/json',
-      'X-API-Key': "5ae5b034-df1b-4ee2-b914-7655f938e49d", //replace with actual function to grab key from environment variable
+      'X-API-Key': "5ae5b034-df1b-4ee2-b914-7655f938e49d", //TODO: replace with actual function to grab key from environment variable
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
       'Access-Control-Allow-Headers': 'Content-Type, Authorization',
     },
   })
-  return responseHandler(req);
+  return req.json()
 }
 
 export async function getJobById(request: Request) {
