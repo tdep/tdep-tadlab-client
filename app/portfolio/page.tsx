@@ -2,22 +2,8 @@
 
 import Link from "next/link";
 import {usePathname} from "next/navigation";
-import Experience from "@/app/portfolio/components/experience";
-import JobsComponent from "@/app/portfolio/components/jobsComponent";
-
-const posts = [
-    {
-      id: 1,
-      title: "post 1",
-      description: "perst",
-      slug: ""
-    },
-  {
-    id: 2,
-    title: "post 2",
-    description: "perst",
-    slug: ""
-  }]
+import Experience from "@/app/portfolio/components/experience/experience";
+import JobsComponent from "@/app/portfolio/components/experience/jobsComponent";
 
 export default function Page() {
   const pathname = usePathname()
@@ -30,11 +16,6 @@ export default function Page() {
               Landing page
             </Link>
           </li>
-          {posts.map((post) => (
-              <li key={post.id}>
-                <Link href={`/blog.${post.slug}`}>{post.title}</Link>
-              </li>
-          ))}
         </ul>
         <Experience/>
       </>

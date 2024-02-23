@@ -1,40 +1,39 @@
-import {JobsResponse} from "@/app/_types/Job";
+import {Job, JobsResponse} from "@/app/_types/Job";
+import {TADLAB_API_URL, X_API_KEY} from "@/app/portfolio/lib/constants";
 
 export const dynamic = 'force-dynamic'
 
-export async function getAllJobs(): Promise<JobsResponse> {
-  const req = await fetch('https://tdep-tadlab-api-713a0d814a93.herokuapp.com/api/v1/jobs', {
+export async function getAllJobs(): Promise<Array<Job>> {
+  const req = await fetch(`${TADLAB_API_URL}/v1/jobs`, {
     headers: {
       'Content-Type': 'application/json',
-      'X-API-Key': "5ae5b034-df1b-4ee2-b914-7655f938e49d", //TODO: replace with actual function to grab key from environment variable
+      'X-API-Key': X_API_KEY, //TODO: replace with actual function to grab key from environment variable
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
       'Access-Control-Allow-Headers': 'Content-Type, Authorization',
     },
-  })
-  return req.json()
+  });
+  return await req.json();
 }
 
-export async function getJobById(request: Request) {
-  const { searchParams } = new URL(request.url)
-  const id = searchParams.get('id')
-  const res = await fetch(`https://tdep-tadlab-api-713a0d814a93.herokuapp.com/api/v1/jobs/${id}`, {
+export async function getJobById(id:number): Promise<Job> {
+  const req = await fetch(`${TADLAB_API_URL}/v1/jobs/${id}`, {
     headers: {
       'Content-Type': 'application/json',
-      'API-KEY': '5ae5b034-df1b-4ee2-b914-7655f938e49d',
+      'X-API-KEY': X_API_KEY,
+      'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type, Authorization',
     },
-  })
-  const job = await res.json()
-
-  return Response.json({ job })
+  });
+  return await req.json();
 }
 
 export async function updateJob() {
-  const res = await fetch("https://tdep-tadlab-api-713a0d814a93.herokuapp.com/api/v1/jobs", {
+  const res = await fetch(`${TADLAB_API_URL}/v1/jobs`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'API-KEY': "process.env.DATA_API_KEY",
+      'X-API-KEY': X_API_KEY,
     },
     body: JSON.stringify({ time: new Date().toISOString() }),
   })
