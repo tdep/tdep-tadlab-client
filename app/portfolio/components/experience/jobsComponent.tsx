@@ -54,6 +54,7 @@ export default function JobsComponent() {
     )
   }
 
+    // TODO: fix active job select
   const JobsDescriptionComponent = (props: JobsComponentsProps) => {
     const {jobs} = props;
     return (
