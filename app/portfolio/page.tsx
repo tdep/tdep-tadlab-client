@@ -17,8 +17,9 @@ export default function Page() {
       <>
           <header>
               <div className={"container"}>
-                  <h1 className={"text-3xl font-bold underline"}>Trevor DePew</h1>
+                  <h1>Trevor DePew</h1>
                   <h1>Portfolio</h1>
+                  <Link className={"link-github"} href={"github"}>Github</Link>
               </div>
           </header>
           <main id={"main"} tabIndex={-1}>
