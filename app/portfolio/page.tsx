@@ -17,7 +17,7 @@ export default function Page() {
       <>
           <header>
               <div className={"container"}>
-                  <h1>Trevor DePew</h1>
+                  <h1 className={"text-3xl font-bold underline"}>Trevor DePew</h1>
                   <h1>Portfolio</h1>
               </div>
           </header>

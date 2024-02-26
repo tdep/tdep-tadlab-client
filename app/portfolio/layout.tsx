@@ -1,4 +1,5 @@
 import React from "react";
+import './styles/portfolioPage.css'
 
 export default function PortfolioLayout({
     children, //will be a page or nested layout
