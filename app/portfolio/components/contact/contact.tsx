@@ -1,6 +1,6 @@
 export default function Contact() {
     return (
-        <article id={"contact"} className={"contact-section"}>
+        <article id={"contact"}>
             <section className={"container"}>
                 <h2>Contact</h2>
                 <p>This is where all of my contact info will live!</p>

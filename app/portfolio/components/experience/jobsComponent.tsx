@@ -19,6 +19,7 @@ export default function JobsComponent() {
           .catch(e => console.log("----->", e));
     };
 
+    // TODO: probably need to set fetchJobById to have a useEffect dependency for activeJob
     const fetchJobById = () => {
         setLoading(true);
         getJobById(2)
@@ -44,17 +45,18 @@ export default function JobsComponent() {
   const JobsListComponent = (props: JobsComponentsProps) => {
     const {jobs} = props;
     return (
-        <ul>
-          {jobs.map(j => {
-            return(
-                <li id={j.id.toString()} key={j.id} onClick={handleJobSelect}>{j.name}</li>
-            )}
-          )}
+        <ul className={"jobs-list"}>
+          {jobs.map(
+              j =>
+                  j.id === activeJob ?
+                      <li id={j.id.toString()} key={j.id} className={"job-active"} onClick={handleJobSelect}>{j.name}</li> :
+                      <li id={j.id.toString()} key={j.id} className={"job"} onClick={handleJobSelect}>{j.name}</li>
+            )
+          }
         </ul>
     )
   }
 
-    // TODO: fix active job select
   const JobsDescriptionComponent = (props: JobsComponentsProps) => {
     const {jobs} = props;
     return (
@@ -70,7 +72,6 @@ export default function JobsComponent() {
         <blockquote className={"job-description-container"}>
           {jobsResponse ? <JobsDescriptionComponent jobs={jobsResponse}/> : <h3>Loading descriptions....</h3>}
         </blockquote>
-          <span>{job ? `${job.name}` : "no jobs here"}</span>
       </section>
   )
 }

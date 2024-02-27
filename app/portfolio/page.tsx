@@ -10,6 +10,7 @@ import Contact from "@/app/portfolio/components/contact/contact";
 import Portfolio from "@/app/portfolio/components/portfolio/portfolio";
 import Footer from "@/app/_includes/footer";
 import Portrait from "@/app/_includes/portrait";
+import NavPanel from "@/app/_includes/navPanel";
 
 export default function Page() {
   const pathname = usePathname()
@@ -22,6 +23,7 @@ export default function Page() {
                   <Link className={"link-github"} href={"github"}>Github</Link>
               </div>
           </header>
+          <NavPanel />
           <main id={"main"} tabIndex={-1}>
               <div className={"container"}>
                   <About />
@@ -32,13 +34,6 @@ export default function Page() {
           </main>
           <Portrait></Portrait>
           <Footer></Footer>
-        <ul>
-          <li>
-            <Link className={`link ${pathname === '/' ? 'active' : ''}`}href={"/"}>
-              Landing page
-            </Link>
-          </li>
-        </ul>
       </>
   )
 }

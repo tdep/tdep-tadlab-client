@@ -9,8 +9,8 @@ export default function Experience() {
 
 
   return (
-      <article>
-        <section>
+      <article id={"experience"}>
+        <section className={"container"}>
           <h2>Work Experience</h2>
             <p>
               I'm lucky to have had a variety of work experiences over the years in all sorts of disciplines.

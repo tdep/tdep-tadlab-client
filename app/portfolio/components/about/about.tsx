@@ -1,6 +1,6 @@
 export default function About() {
     return (
-        <article id={"about"} className={"about-section"}>
+        <article id={"about"}>
             <section className={"container"}>
                 <h1>Trevor DePew</h1>
                 <h3>Software Engineer</h3>
