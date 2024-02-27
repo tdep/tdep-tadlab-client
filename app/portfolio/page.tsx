@@ -11,19 +11,12 @@ import Portfolio from "@/app/portfolio/components/portfolio/portfolio";
 import Footer from "@/app/_includes/footer";
 import Portrait from "@/app/_includes/portrait";
 import NavPanel from "@/app/_includes/navPanel";
+import Header from "@/app/_includes/header";
 
 export default function Page() {
   const pathname = usePathname()
   return (
       <>
-          <header>
-              <div className={"container"}>
-                  <h1>Trevor DePew</h1>
-                  <h1>Portfolio</h1>
-                  <Link className={"link-github"} href={"github"}>Github</Link>
-              </div>
-          </header>
-          <NavPanel />
           <main id={"main"} tabIndex={-1}>
               <div className={"container"}>
                   <About />

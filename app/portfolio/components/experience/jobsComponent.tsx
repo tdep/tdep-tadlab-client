@@ -18,28 +18,29 @@ export default function JobsComponent() {
           })
           .catch(e => console.log("----->", e));
     };
-
-    // TODO: probably need to set fetchJobById to have a useEffect dependency for activeJob
-    const fetchJobById = () => {
-        setLoading(true);
-        getJobById(2)
-            .then(response => {
-                setLoading(false);
-                setJob(response);
-            })
-            .catch(e => console.log("----->", e));
-    }
     fetchJobs();
-    fetchJobById();
   }, []);
+
+  useEffect(() => {
+      const fetchJobById = (id: number) => {
+          setLoading(true);
+          getJobById(id)
+              .then(response => {
+                  setLoading(false);
+                  setJob(response);
+              })
+              .catch(e => console.log("----->", e));
+      }
+      fetchJobById(activeJob);
+  }, [activeJob]);
 
 
   type JobsComponentsProps = {
-    jobs: Job[]
+      jobs: Job[]
   }
 
   function handleJobSelect(e:any) {
-    setActiveJob(e.target.id);
+    setActiveJob(parseInt(e.target.id));
   }
 
   const JobsListComponent = (props: JobsComponentsProps) => {

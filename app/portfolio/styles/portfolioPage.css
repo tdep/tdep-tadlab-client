@@ -814,6 +814,7 @@ blockquote {
             var(--color-primary),
             transparent
     );
+    min-width: 60%;
     max-width: 60%;
     max-height: 12em;
 }
