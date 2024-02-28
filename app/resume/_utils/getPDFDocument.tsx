@@ -15,4 +15,4 @@ const getPDFDocument = async (path: string) => {
     });
 };
 
-export default getPDFDocument
+export default getPDFDocument;
