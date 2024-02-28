@@ -9,12 +9,12 @@ export default function PortfolioLayout({
   children: React.ReactNode
 }) {
   return (
-      <>
+      <section>
         {/*Include shared ui here like sidebar */}
           <Header />
           <NavPanel />
 
         {children}
-      </>
+      </section>
   )
 }
