@@ -1,15 +1,20 @@
 const ProjectCard = () => {
     return (
-        <div className={"card-container"} style={{width:"100%", alignContent:"space-between"}}>
-            <div className={"card-contents"} style={{display:"flex", flexDirection:"row"}}>
-                <div className={"title"}>
+        <div className={"card-container"}>
+            <section className={"card-contents"}>
+                <div className={"card-title-container"}>
                     <h3>Title</h3>
-                    <img src={"/public/temp.jpg"} alt={"temp"}></img>
+                    <ul>
+                        <li><a href={""}>Demo</a></li>
+                        <li><a href={""}>GitHub</a></li>
+                    </ul>
                 </div>
-                <div className={"description"}>
-                    <p>This will be where the project is described.</p>
+                <div className={"card-description-container"}>
+                    <img className={"project-image"} src={"/public/temp.jpg"} alt={"temp"}></img>
+                    <blockquote className={"project-description-container"}>This will be where the project is described.</blockquote>
                 </div>
-            </div>
+
+            </section>
         </div>
     )
 }
