@@ -1,46 +1,43 @@
 import {Project, ProjectResponse} from "@/app/_types/Project";
 
-const ProjectCard = ({projects}:ProjectResponse) => {
+const ProjectCard = (project:Project) => {
 
-    type ProjectsComponentsProps = {
-        projects: Project[]
+    type ProjectComponentProp = {
+        thisProject: Project
     }
 
-    const ProjectsTitleComponent = (props: ProjectsComponentsProps) => {
-        const {projects} = props;
+    const ProjectsTitleComponent = (props: ProjectComponentProp) => {
+        const {thisProject} = props;
+
         return (
-            <ul>
-                {projects.map((
-                    p =>
-                        <div className={"card-title-container"}>
-                            <h3>{p.title}</h3>
-                            <ul>
-                                <li><a href={""}>Demo</a></li>
-                                <li><a href={""}>GitHub</a></li>
-                            </ul>
-                        </div>
-                ))}
-                <li><a href={""}>GitHub</a></li>
-            </ul>
+            <div className={"card-title-container"}>
+                <h3>{project.title})</h3>
+                <ul>
+                    <li><a href={""}>Demo</a></li>
+                    <li><a href={""}>GitHub</a></li>
+                </ul>
+            </div>
         )
     }
 
-    const ProjectsDescriptionComponent = (props: ProjectsComponentsProps) => {
-        const {projects} = props;
+    const ProjectsDescriptionComponent = (props: ProjectComponentProp) => {
+        const {thisProject} = props;
         return (
             <div className={"card-description-container"}>
-                <img className={"project-image"} src={"/public/temp.jpg"} alt={"temp"}></img>
-                <blockquote className={"project-description-container"}>This will be where the project is described.
+                <img className={"project-image"} src={thisProject.image_url} alt={"temp"}></img>
+                <blockquote className={"project-description-container"}>
+                    {thisProject.description}
                 </blockquote>
             </div>
         )
     }
 
+
     return (
         <div className={"card-container"}>
             <section className={"card-contents"}>
-                <ProjectsTitleComponent projects={projects}/>
-                <ProjectsDescriptionComponent projects={projects}/>
+                <ProjectsTitleComponent thisProject={project}/>
+                <ProjectsDescriptionComponent thisProject={project}/>
             </section>
         </div>
     )
