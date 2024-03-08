@@ -978,6 +978,11 @@ PROJECTS
     position: relative;
 }
 
+#projects .carousel ul {
+    list-style: none;
+    display: block;
+}
+
 #projects .carousel button {
     background-color: var(--color-secondary);
     margin: 0 0.25em 0 0.25em;
@@ -1000,6 +1005,11 @@ PROJECTS
     box-shadow: inset -4px -4px 0 var(--color-primary);
     color: var(--color-secondary);
     border-color: var(--color-primary);
+}
+
+#projects .project-list ul li {
+    list-style: none;
+    display: block;
 }
 
 #projects .card-container {

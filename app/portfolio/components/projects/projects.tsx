@@ -15,10 +15,7 @@ export default function Projects() {
                 <p>Here be projects I've made and stuff.</p>
             </section>
             <section className={"container"}>
-                <div className={"projects-gallery"}>
-                    <ProjectCarousel />
-
-                </div>
+                <ProjectCarousel />
             </section>
         </article>
     )

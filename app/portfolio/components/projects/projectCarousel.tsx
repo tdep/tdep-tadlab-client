@@ -44,21 +44,22 @@ const ProjectCarousel = () => {
         projects: Project[]
     }
 
+    // TODO: build modal to access projects individually when clicked
     const ProjectsComponent = (props: ProjectsComponentProps) => {
         const {projects} = props;
         return (
-            <ul>
+            <ul className={"projects-list"}>
                 {projects.map(
                     p =>
                         p.id === activeProject ?
-                            <li id={p.id.toString()} key={p.id} onClick={handleProjectSelect}>
+                            <li id={p.id.toString()} key={p.id} onClick={handleProjectSelect} className={"project-active"}>
                                 <ProjectCard
                                     id={p.id}
                                     title={p.title}
                                     description={p.description}
                                     image_url={p.image_url} />
                             </li> :
-                            <li id={p.id.toString()} key={p.id} onClick={handleProjectSelect}>
+                            <li id={p.id.toString()} key={p.id} onClick={handleProjectSelect} className={"project"}>
                                 <ProjectCard
                                     id={p.id}
                                     title={p.title}
@@ -73,12 +74,10 @@ const ProjectCarousel = () => {
 
 
     return (
-        <div className={"carousel-container"}>
-            <div className={"carousel"}>
-                {projectResponse?
-                    <ProjectsComponent projects={projectResponse} /> : <h3>Loading Projects....</h3>
-                }
-            </div>
+        <div className={"carousel"}>
+            {projectResponse?
+                <ProjectsComponent projects={projectResponse} /> : <h3>Loading Projects....</h3>
+            }
         </div>
     )
 }
