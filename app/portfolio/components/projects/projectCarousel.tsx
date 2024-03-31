@@ -16,7 +16,6 @@ const ProjectCarousel = () => {
                 .then(response => {
                     setLoading(false);
                     setProjectResponse(response);
-                    console.log(projectResponse)
                 })
                 .catch(e => console.log("----->", e));
         };
@@ -47,7 +46,6 @@ const ProjectCarousel = () => {
     // TODO: build modal to access projects individually when clicked
     const ProjectsComponent = (props: ProjectsComponentProps) => {
         const {projects} = props;
-        console.log(projects)
         return (
             <ul className={"projects-list"}>
                 {projects.map(
@@ -55,6 +53,7 @@ const ProjectCarousel = () => {
                         p.id === activeProject ?
                             <li id={p.id.toString()} key={p.id} onClick={handleProjectSelect} className={"project-active"}>
                                 <ProjectCard
+                                    key={p.id}
                                     author={p.author}
                                     createdAt={p.createdAt}
                                     createdBy={p.createdBy}
@@ -71,6 +70,7 @@ const ProjectCarousel = () => {
                             </li> :
                             <li id={p.id.toString()} key={p.id} onClick={handleProjectSelect} className={"project"}>
                                 <ProjectCard
+                                    key={p.id}
                                     author={p.author}
                                     createdAt={p.createdAt}
                                     createdBy={p.createdBy}
