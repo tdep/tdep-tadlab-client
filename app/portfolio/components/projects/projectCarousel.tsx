@@ -54,17 +54,33 @@ const ProjectCarousel = () => {
                         p.id === activeProject ?
                             <li id={p.id.toString()} key={p.id} onClick={handleProjectSelect} className={"project-active"}>
                                 <ProjectCard
+                                    author={p.author}
+                                    createdAt={p.createdAt}
+                                    createdBy={p.createdBy}
+                                    updatedAt={p.updatedAt}
+                                    updatedBy={p.updatedBy}
+                                    entryName={p.entryName}
+                                    entryType={p.entryType}
                                     id={p.id}
                                     title={p.title}
-                                    description={p.description}
-                                    image_url={p.image_url} />
+                                    projectDetail={p.projectDetail}
+                                    links={p.links}
+
+                                     />
                             </li> :
                             <li id={p.id.toString()} key={p.id} onClick={handleProjectSelect} className={"project"}>
                                 <ProjectCard
+                                    author={p.author}
+                                    createdAt={p.createdAt}
+                                    createdBy={p.createdBy}
+                                    updatedAt={p.updatedAt}
+                                    updatedBy={p.updatedBy}
+                                    entryName={p.entryName}
+                                    entryType={p.entryType}
                                     id={p.id}
                                     title={p.title}
-                                    description={p.description}
-                                    image_url={p.image_url} />
+                                    projectDetail={p.projectDetail}
+                                    links={p.links} />
                             </li>
                     )
                 }

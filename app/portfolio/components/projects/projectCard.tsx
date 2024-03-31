@@ -24,9 +24,9 @@ const ProjectCard = (project:Project) => {
         const {thisProject} = props;
         return (
             <div className={"card-description-container"}>
-                <img className={"project-image"} src={thisProject.image_url} alt={"temp"}></img>
+                <img className={"project-image"} src={""} alt={"temp"}></img>
                 <blockquote className={"project-description-container"}>
-                    {thisProject.description}
+                    {thisProject.title}
                 </blockquote>
             </div>
         )

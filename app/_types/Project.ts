@@ -1,10 +1,42 @@
 export type Project = {
+    author: Author
+    createdAt: Date
+    createdBy: string
+    updatedAt: Date
+    updatedBy: string
+    entryName: string
+    entryType: string
     id: number
     title: number
-    description: string
-    image_url: string
+    projectDetail: ProjectDetail
+    links: Link[]
 }
 
 export type ProjectResponse = {
     projects: Project[]
+}
+
+export type Author = {
+    firstName: string
+    lastName: string
+}
+
+export type ProjectDetail = {
+    description: string
+}
+
+export type Link = {
+    id: number
+    name: string
+    linkType: LinkTypes
+    url: string
+}
+
+export enum LinkTypes {
+    DEMO = 'DEMO',
+    GITHUB = 'GITHUB',
+    IMAGE = 'IMAGE',
+    TOOL = 'TOOL',
+    LINKEDIN = 'LINKEDIN',
+    EXTERNAL_PORTFOLIO = 'EXTERNAL_PORTFOLIO'
 }

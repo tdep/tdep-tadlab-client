@@ -62,7 +62,7 @@ export default function JobsComponent() {
     const {jobs} = props;
     return (
         <>
-          {jobs.map(j => j.id === activeJob ? <p id={j.id.toString()} key={j.id}>{j.description}</p> : null)}
+          {jobs.map(j => j.id === activeJob ? <p id={j.id.toString()} key={j.id}>{j.jobDetail.description}</p> : null)}
         </>
     )
   }
