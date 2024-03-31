@@ -47,6 +47,7 @@ const ProjectCarousel = () => {
     // TODO: build modal to access projects individually when clicked
     const ProjectsComponent = (props: ProjectsComponentProps) => {
         const {projects} = props;
+        console.log(projects)
         return (
             <ul className={"projects-list"}>
                 {projects.map(

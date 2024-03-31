@@ -14,6 +14,7 @@ export async function getAllProjects(): Promise<Array<Project>> {
             'Access-Control-Allow-Headers': 'Content-Type, Authorization',
         },
     });
+    console.log(req)
     return await req.json();
 }
 

@@ -28,7 +28,6 @@ export type ProjectDetail = {
 export type Link = {
     id: number
     name: string
-    linkType: LinkTypes
     url: string
 }
 

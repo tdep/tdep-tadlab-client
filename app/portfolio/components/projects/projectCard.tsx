@@ -26,7 +26,7 @@ const ProjectCard = (project:Project) => {
             <div className={"card-description-container"}>
                 <img className={"project-image"} src={""} alt={"temp"}></img>
                 <blockquote className={"project-description-container"}>
-                    {thisProject.title}
+                    {thisProject.projectDetail.description}
                 </blockquote>
             </div>
         )
