@@ -7,6 +7,7 @@
     --color-about: crimson;
     --color-experience: orange;
     --color-projects: mediumseagreen;
+    --color-projects-alt:seagreen;
     --color-contact: cornflowerblue;
     --font-family-primary: "Sora", sans-serif;
     --font-family-secondary: "Inter", "Sora", sans-serif;
@@ -248,7 +249,7 @@ nav {
     margin-bottom: 2rem;
 }
 @media all and (min-width: 1300px) {
-    nav {
+     nav {
         border: 4px solid var(--color-primary);
         width: 250px;
         position: fixed;
@@ -273,7 +274,7 @@ nav ul {
     flex-wrap: wrap;
 }
 @media all and (min-width: 1300px) {
-    nav ul {
+     nav ul #main-nav-ul {
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -284,7 +285,7 @@ nav li {
     width: 50%;
 }
 @media all and (min-width: 1300px) {
-    nav li {
+     nav li {
         width: 100%;
     }
 }
@@ -295,12 +296,12 @@ nav li:nth-child(odd) {
     border-right: 4px solid;
 }
 @media all and (min-width: 1300px) {
-    nav li:nth-child(odd) {
+     nav li:nth-child(odd) {
         border-right: none;
     }
 }
 @media all and (min-width: 1300px) {
-    nav li + li {
+     nav li + li {
         border-top: 4px solid;
     }
 }
@@ -319,7 +320,7 @@ nav a {
     font-size: 1rem;
 }
 @media all and (min-width: 1300px) {
-    nav a {
+     nav a {
         font-size: 1.25rem;
         padding: 1.25em;
     }
@@ -334,7 +335,7 @@ nav a:after {
     font-weight: 700;
 }
 @media all and (min-width: 1300px) {
-    nav a:after {
+     nav a:after {
         font-size: 1.5rem;
     }
 }
