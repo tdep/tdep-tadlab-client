@@ -4,7 +4,7 @@ import Pagination from "@/app/portfolio/components/Pagination";
 
 export default function Projects() {
     const [currentPage, setCurrentPage] = useState(1);
-    const lastPage = 20;
+    const lastPage = 3;
     return (
         <article id={"projects"}>
             <section className={"container"}>

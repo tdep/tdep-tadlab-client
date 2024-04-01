@@ -50,7 +50,9 @@
 }
 
 .page-link.disabled {
-    color: #9ca3af;
+    color: var(--color-secondary-disabled);
     border-color: var(--color-primary-alt);
     pointer-events: none;
+    box-shadow: inset 2px 2px 0 var(--color-secondary-disabled);
+    -webkit-box-shadow: inset 2px 2px 0 var(--color-secondary-disabled);
 }
