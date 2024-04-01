@@ -1,43 +1,46 @@
-import {Project, ProjectResponse} from "@/app/_types/Project";
+import {Link, Project, ProjectResponse} from "@/app/_types/Project";
 import temp from "@/app/portfolio/public/images/portfolio-site-temp.png"
 
 const ProjectCard = (project:Project) => {
 
     type ProjectComponentProp = {
-        thisProject: Project
+        thisProject: Project;
     }
+
+
 
     const ProjectsTitleComponent = (props: ProjectComponentProp) => {
         const {thisProject} = props;
+        const linkUrls = thisProject.links.map((l) => { return l.url });
+        const titleLinks = {
+            "demo": linkUrls[0],
+            "github": linkUrls[1]
+        }
 
         return (
             <div className={"card-title-container"}>
                 <h3>{thisProject.title})</h3>
-                    {thisProject.links.map(link => {
-                        let links = {
-                            'demo': link.name.includes("demo") ?
-                                <li><a href={link.url} key={link.id} target={"_blank"}>Demo</a></li> : null,
-                            'github': link.name.includes("github") ?
-                                <li><a href={link.url} key={link.id} target={"_blank"}>GitHub</a></li> : null
-                        }
-                        return (
-                            <ul key={"project_links"}>
-                                {links.demo}
-                                {links.github}
-                            </ul>
-                        )}
-                    )}
+                <ul className={""}>
+                    {titleLinks.demo.length > 0 ? <li><a href={titleLinks.demo}>Demo</a></li> : ""}
+                    {titleLinks.github.length > 0 ? <li><a href={titleLinks.github}>GitHub</a></li> : ""}
+                </ul>
             </div>
-        )
+    )
     }
 
     const ProjectsDescriptionComponent = (props: ProjectComponentProp) => {
         const {thisProject} = props;
+        const linkUrls = thisProject.links.map((l) => { return l.url });
+        const descriptionLinks = {
+            "image": linkUrls[2]
+        }
 
         return (
             <div className={"card-description-container"}>
-                <img className={"project-image"} src={temp.src} alt={"temp"}/>
-
+                {descriptionLinks.image.length > 0 ?
+                    <img className={"project-image"} src={descriptionLinks.image} alt={`${thisProject.title} image`}/> :
+                    <img className={"project-image"} src={temp.src} alt={"temp"}/>
+                }
                 <blockquote className={"project-description-container"}>
                     {thisProject.projectDetail.description}
                 </blockquote>
