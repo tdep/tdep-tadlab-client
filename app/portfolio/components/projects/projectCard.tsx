@@ -7,6 +7,8 @@ const ProjectCard = (project:Project) => {
         thisProject: Project;
     }
 
+    // TODO: create a dynamic import for images, or just import them and grab them from an object comparing the name to the url
+
 
 
     const ProjectsTitleComponent = (props: ProjectComponentProp) => {

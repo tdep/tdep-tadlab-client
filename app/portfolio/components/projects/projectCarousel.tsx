@@ -3,6 +3,7 @@ import React, {useEffect, useState} from "react";
 import {Project} from "@/app/_types/Project";
 import {getAllProjects, getProjectById} from "@/app/portfolio/_api/projects/route";
 
+
 const ProjectCarousel = () => {
     const [projectResponse, setProjectResponse] = useState<Array<Project>>();
     const [project, setProject] = useState<Project>();
