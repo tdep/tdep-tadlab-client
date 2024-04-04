@@ -1,3 +1,5 @@
+import {StaticImageData} from "next/image";
+
 export type Project = {
     author: Author
     createdAt: Date
@@ -35,6 +37,14 @@ export type CurrentPage = {
     thisPage: number;
     firstPageIndex: number;
     lastPageIndex: number;
+}
+
+export type ProjectImageNames = {
+    webSynth: StaticImageData;
+    tadlab: StaticImageData;
+    sequinzer: StaticImageData;
+    sequinzer2A: StaticImageData;
+    portfolioV2: StaticImageData;
 }
 
 export enum LinkTypes {
