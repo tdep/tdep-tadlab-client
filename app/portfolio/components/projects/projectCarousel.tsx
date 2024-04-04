@@ -1,14 +1,16 @@
 import ProjectCard from "@/app/portfolio/components/projects/projectCard";
 import React, {useEffect, useState} from "react";
-import {Project} from "@/app/_types/Project";
+import {CurrentPage, Project} from "@/app/_types/Project";
 import {getAllProjects, getProjectById} from "@/app/portfolio/_api/projects/route";
 
 
-const ProjectCarousel = () => {
+const ProjectCarousel = ( currentPage : CurrentPage) => {
     const [projectResponse, setProjectResponse] = useState<Array<Project>>();
     const [project, setProject] = useState<Project>();
-    const [activeProject, setActiveProject] = useState(2);
+    const [activeProject, setActiveProject] = useState(3);
     const [loading, setLoading] = useState(false);
+
+
 
     useEffect(() => {
         const fetchProjects = () => {
@@ -47,9 +49,10 @@ const ProjectCarousel = () => {
     // TODO: build modal to access projects individually when clicked
     const ProjectsComponent = (props: ProjectsComponentProps) => {
         const {projects} = props;
+        const displayedProjects = projects.slice(currentPage.firstPageIndex, currentPage.lastPageIndex)
         return (
             <ul className={"projects-list"}>
-                {projects.map(
+                {displayedProjects.map(
                     p =>
                         p.id === activeProject ?
                             <li id={p.id.toString()} key={p.id} onClick={handleProjectSelect} className={"project-active"}>

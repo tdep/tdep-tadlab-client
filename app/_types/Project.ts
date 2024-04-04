@@ -31,6 +31,12 @@ export type Link = {
     url: string
 }
 
+export type CurrentPage = {
+    thisPage: number;
+    firstPageIndex: number;
+    lastPageIndex: number;
+}
+
 export enum LinkTypes {
     DEMO = 'DEMO',
     GITHUB = 'GITHUB',

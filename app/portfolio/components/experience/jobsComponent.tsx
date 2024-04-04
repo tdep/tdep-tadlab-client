@@ -5,7 +5,7 @@ import {getAllJobs, getJobById} from "@/app/portfolio/_api/jobs/route";
 export default function JobsComponent() {
   const [jobsResponse, setJobsResponse] = useState<Array<Job>>();
   const [job, setJob] = useState<Job>();
-  const [activeJob, setActiveJob] = useState(1);
+  const [activeJob, setActiveJob] = useState(8);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {

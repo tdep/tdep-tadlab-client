@@ -7,10 +7,6 @@ const ProjectCard = (project:Project) => {
         thisProject: Project;
     }
 
-    // TODO: create a dynamic import for images, or just import them and grab them from an object comparing the name to the url
-
-
-
     const ProjectsTitleComponent = (props: ProjectComponentProp) => {
         const {thisProject} = props;
         const linkUrls = thisProject.links.map((l) => { return l.url });
@@ -21,7 +17,7 @@ const ProjectCard = (project:Project) => {
 
         return (
             <div className={"card-title-container"}>
-                <h3>{thisProject.title})</h3>
+                <h3>{thisProject.title}</h3>
                 <ul className={""}>
                     {titleLinks.demo.length > 0 ? <li><a href={titleLinks.demo}>Demo</a></li> : ""}
                     {titleLinks.github.length > 0 ? <li><a href={titleLinks.github}>GitHub</a></li> : ""}
@@ -33,14 +29,15 @@ const ProjectCard = (project:Project) => {
     const ProjectsDescriptionComponent = (props: ProjectComponentProp) => {
         const {thisProject} = props;
         const linkUrls = thisProject.links.map((l) => { return l.url });
-        const descriptionLinks = {
-            "image": linkUrls[2]
-        }
+        const imageUrl = linkUrls[2];
+
+
+
 
         return (
             <div className={"card-description-container"}>
-                {descriptionLinks.image.length > 0 ?
-                    <img className={"project-image"} src={descriptionLinks.image} alt={`${thisProject.title} image`}/> :
+                {imageUrl.length > 0 ?
+                    <img className={"project-image"} src={imageUrl} alt={`${thisProject.title} image`}/> :
                     <img className={"project-image"} src={temp.src} alt={"temp"}/>
                 }
                 <blockquote className={"project-description-container"}>

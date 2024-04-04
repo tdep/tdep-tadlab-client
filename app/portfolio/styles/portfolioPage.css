@@ -1043,6 +1043,10 @@ PROJECTS
     justify-content: space-between;
 }
 
+#projects .card-title-container h3 {
+    width: 50%;
+}
+
 #projects .card-title-container ul a {
     display: -webkit-box;
     display: -ms-flexbox;
