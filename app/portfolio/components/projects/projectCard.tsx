@@ -5,11 +5,10 @@ import tadlab from "@/app/portfolio/public/images/tadlab.gif";
 import sequinzer from "@/app/portfolio/public/images/sequinzer-6001.png";
 import squinzer2A from "@/app/portfolio/public/images/sequinzer-6001-2a.gif";
 import portfolioV2 from "@/app/portfolio/public/images/portfolio-v2.gif";
-import {useState} from "react";
 
 const ProjectCard = (project:Project) => {
 
-    const ImageNames:ProjectImageNames = {
+    const imageNames : ProjectImageNames = {
         webSynth :webSynth,
         tadlab : tadlab,
         sequinzer : sequinzer,
@@ -44,18 +43,14 @@ const ProjectCard = (project:Project) => {
         const {thisProject} = props;
         const linkUrls = thisProject.links.map((l) => { return l.url });
         const imageUrl = linkUrls[2];
-        let imageName = "";
+        let imageName = imageNames[imageUrl as keyof ProjectImageNames];
 
-        Object.keys(ImageNames).map(key => {
-            if (key === imageUrl) {
-                return Object.keys(ImageNames).filter(imageUrl)
-            }
-        });
+
 
         return (
             <div className={"card-description-container"}>
                 {imageUrl.length > 0 ?
-                    <img className={"project-image"} src={} alt={`${thisProject.title} image`}/> :
+                    <img className={"project-image"} src={imageName.src} alt={`${thisProject.title} image`}/> :
                     <img className={"project-image"} src={temp.src} alt={"temp"}/>
                 }
                 <blockquote className={"project-description-container"}>
