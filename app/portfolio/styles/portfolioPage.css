@@ -856,14 +856,21 @@ FOOTER
     margin-top: 4rem;
     width: 100%;
     background-color: var(--color-secondary);
-    padding: 2rem;
-    border-top: 4px solid;
+    box-shadow: 12px 12px 0 var(--color-primary);
+    border: 4px solid;
     text-align: center;
+    padding: 2rem;
 }
 @media all and (min-width: 1300px) {
     .page-footer {
-        padding-right: calc(300px + 2rem);
-        padding-left: calc(300px + 2rem);
+        left: 0;
+        top: 0;
+        z-index: 100;
+        border-bottom: 4px solid;
+        box-shadow: 12px 12px var(--color-primary);
+        width: 100%;
+        margin-bottom: 0;
+        min-width: 100%;
     }
 }
 .page-footer .container > * + * {
