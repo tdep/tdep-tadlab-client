@@ -1266,6 +1266,7 @@ CONTACT
     -webkit-box-shadow: 12px 12px 0 0 var(--color-primary);
     box-shadow: 12px 12px 0 0 var(--color-primary);
     padding: 6rem 2rem 3rem 2rem;
+
     /*the button styling*/
     background: repeating-radial-gradient(
             var(--color-secondary),
@@ -1295,6 +1296,36 @@ CONTACT
     background-size: 50px 50px, 50px 50px, 100% 64px;
     background-repeat: no-repeat;
     position: relative;
+}
+
+#contact-links {
+    display: flex;
+    justify-content: left;
+}
+
+#contact .link-social {
+    text-decoration: none;
+    color: var(--color-primary);
+    font-size: 1rem;
+    padding: 0.25em 1em;
+    border: 3px solid;
+    box-shadow: inset -4px -4px 0 var(--color-primary-alt);
+    width: fit-content;
+    text-align: center;
+    align-content: center;
+    margin: 0.5em 0.25em;
+}
+
+#contact .link-social:hover {
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    border: 3px solid var(--color-primary);
+    box-shadow: none;
+}
+
+#other-projects {
+    display: flex;
+    justify-content: left;
 }
 
 

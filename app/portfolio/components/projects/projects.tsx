@@ -20,7 +20,7 @@ export default function Projects() {
         <article id={"projects"}>
             <section className={"container"}>
                 <div className={"title-buttons"} style={{display:"flex", flexDirection:"row", justifyContent:"space-between"}}>
-                    <h2>Portfolion</h2>
+                    <h2>Projects</h2>
                     <div className={"carousel"}>
                         <Pagination
                             currentPage={currentPage}
@@ -30,7 +30,7 @@ export default function Projects() {
                         />
                     </div>
                 </div>
-                <p>Here be projects I've made and stuff.</p>
+                <p>Check out some of the things I've built!</p>
             </section>
             <section className={"container"}>
                 <ProjectCarousel {...thisPage} />
