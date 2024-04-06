@@ -458,6 +458,71 @@ ABOUT
     background-repeat: no-repeat;
     position: relative;
 }
+
+#about .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#about .name-title {
+    display: flex;
+    flex-direction: column;
+}
+
+#about .blurb {
+    display: flex;
+    flex-direction: row;
+}
+
+#about .photo-container {
+    border: 4px solid;
+    padding: 0.5rem;
+    font-size: 1rem;
+    background: linear-gradient(
+            -45deg,
+            var(--color-secondary),
+            var(--color-secondary) 25%,
+            var(--color-primary) 25%,
+            var(--color-primary) 50%,
+            var(--color-secondary) 50%,
+            var(--color-secondary) 75%,
+            var(--color-primary) 75%,
+            var(--color-primary) 100%
+    );
+    background-size: 40px 40px;
+    -webkit-animation: scrolling-gradient 2s linear infinite;
+    animation: scrolling-gradient 2s linear infinite;
+    width: fit-content;
+    min-width: fit-content;
+    height: fit-content;
+    min-height: fit-content;
+    float: right;
+}
+
+#about #photo {
+    --nominal-dimension: 200px;
+    height: var(--nominal-dimension);
+    width: var(--nominal-dimension);
+    border: 4px solid;
+    object-fit: cover;
+    transition: transform .2s;
+    background-color: var(--color-secondary);
+}
+
+#about #photo:hover {
+    transform:scale(3.5);
+    width: fit-content;
+    object-fit: fill;
+    cursor: pointer;
+    z-index: 10;
+}
+
+#about #text-container {
+    display: inline;
+    flex-direction: row;
+}
+
 #about a,
 .profile a,
 .projects p a,
@@ -720,6 +785,7 @@ PROFILE
 */
 
 .profile {
+    display: none;
     border: 4px solid;
     padding: 0.5rem;
     font-size: 1rem;
@@ -1175,7 +1241,6 @@ PROJECTS
     border: 4px solid;
     object-fit: cover;
     transition: transform .2s;
-
 }
 
 #projects .project-image:hover {
