@@ -5,7 +5,6 @@ import tadlab from "@/app/portfolio/public/images/tadlab.gif";
 import sequinzer from "@/app/portfolio/public/images/sequinzer-6001.png";
 import squinzer2A from "@/app/portfolio/public/images/sequinzer-6001-2a.gif";
 import portfolioV2 from "@/app/portfolio/public/images/portfolio-v2.gif";
-import {element} from "prop-types";
 
 const ProjectCard = (project:Project) => {
 

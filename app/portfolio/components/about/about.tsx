@@ -1,3 +1,5 @@
+import portrait from "@/app/portfolio/public/images/profile_trevor.png"
+
 export default function About() {
     return (
         <article id={"about"}>
@@ -28,7 +30,7 @@ export default function About() {
                     </p>
                 </div>
                 <div className={"photo-container"}>
-                    <img id={"photo"} src={""} alt={"Photo of Trevor DePew"}/>
+                    <img id={"photo"} src={portrait.src} alt={"Photo of Trevor DePew"}/>
                 </div>
             </section>
         </article>
