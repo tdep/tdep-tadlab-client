@@ -2,6 +2,7 @@ import ProjectCard from "@/app/portfolio/components/projects/projectCard";
 import React, {useEffect, useState} from "react";
 import {CurrentPage, Project} from "@/app/_types/Project";
 import {getAllProjects, getProjectById} from "@/app/portfolio/_api/projects/route";
+import LoadingMessage from "@/app/portfolio/components/LoadingMessage";
 
 
 const ProjectCarousel = ( currentPage : CurrentPage) => {
@@ -9,8 +10,11 @@ const ProjectCarousel = ( currentPage : CurrentPage) => {
     const [project, setProject] = useState<Project>();
     const [activeProject, setActiveProject] = useState(3);
     const [loading, setLoading] = useState(false);
+    const [refreshData, setRefreshData] = useState(true);
 
-
+    const handleDataRefresh = () => {
+        setRefreshData(!refreshData);
+    }
 
     useEffect(() => {
         const fetchProjects = () => {
@@ -22,8 +26,11 @@ const ProjectCarousel = ( currentPage : CurrentPage) => {
                 })
                 .catch(e => console.log("----->", e));
         };
-        fetchProjects();
-    }, []);
+        if(refreshData) {
+            fetchProjects();
+            setRefreshData(false);
+        }
+    }, [refreshData]);
 
     useEffect(() => {
         const fetchProjectById = (id: number) => {
@@ -97,7 +104,7 @@ const ProjectCarousel = ( currentPage : CurrentPage) => {
     return (
         <div className={"carousel"}>
             {projectResponse?
-                <ProjectsComponent projects={projectResponse} /> : <h3>Loading Projects....</h3>
+                <ProjectsComponent projects={projectResponse} /> : <LoadingMessage handleDataRefresh={handleDataRefresh}/>
             }
         </div>
     )

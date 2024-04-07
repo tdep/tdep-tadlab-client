@@ -1,12 +1,18 @@
 import React, {useEffect, useState} from "react";
 import {Job, JobsResponse} from "@/app/_types/Job";
 import {getAllJobs, getJobById} from "@/app/portfolio/_api/jobs/route";
+import LoadingMessage from "@/app/portfolio/components/LoadingMessage";
 
 export default function JobsComponent() {
   const [jobsResponse, setJobsResponse] = useState<Array<Job>>();
   const [job, setJob] = useState<Job>();
   const [activeJob, setActiveJob] = useState(8);
   const [loading, setLoading] = useState(false);
+  const [refreshData, setRefreshData] = useState(true);
+
+  const handleDataRefresh = () => {
+    setRefreshData(!refreshData);
+  }
 
   useEffect(() => {
     const fetchJobs = () => {
@@ -18,8 +24,11 @@ export default function JobsComponent() {
           })
           .catch(e => console.log("----->", e));
     };
-    fetchJobs();
-  }, []);
+    if (refreshData) {
+        fetchJobs();
+        setRefreshData(false);
+    }
+  }, [refreshData]);
 
   useEffect(() => {
       const fetchJobById = (id: number) => {
@@ -68,11 +77,16 @@ export default function JobsComponent() {
   }
 
   return (
-      <section className={"jobs-container"}>
-        {jobsResponse ? <JobsListComponent jobs={jobsResponse}/> : <h3>Loading jobs.... </h3> }
-        <blockquote className={"job-description-container"}>
-          {jobsResponse ? <JobsDescriptionComponent jobs={jobsResponse}/> : <h3>Loading descriptions....</h3>}
-        </blockquote>
-      </section>
+      <>
+          {jobsResponse ?
+              <section className={"jobs-container"}>
+                  <JobsListComponent jobs={jobsResponse}/>
+                  <blockquote className={"job-description-container"}>
+                      <JobsDescriptionComponent jobs={jobsResponse}/>
+                  </blockquote>
+              </section> :
+          <LoadingMessage handleDataRefresh={handleDataRefresh} />
+          }
+      </>
   )
 }
