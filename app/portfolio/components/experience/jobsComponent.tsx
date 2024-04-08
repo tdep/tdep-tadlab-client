@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {Job, JobsResponse} from "@/app/_types/Job";
-import {getAllJobs, getJobById} from "@/app/portfolio/api/jobs/route";
+import {getAllJobs, getJobById} from "@/app/portfolio/_api/jobs/route";
 import LoadingMessage from "@/app/portfolio/components/LoadingMessage";
 
 export default function JobsComponent() {
