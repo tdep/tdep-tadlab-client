@@ -1,5 +1,5 @@
 import {Project} from "@/app/_types/Project";
-import {TADLAB_API_URL, X_API_KEY} from "@/app/portfolio/lib/constants";
+import {TADLAB_API_URL, X_API_KEY} from "@/app/portfolio/lib/_constants";
 import {Tool} from "@/app/_types/Tool";
 
 export const dynamic = 'force-dynamic';

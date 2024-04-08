@@ -1,7 +1,7 @@
 import ProjectCard from "@/app/portfolio/components/projects/projectCard";
 import React, {useEffect, useState} from "react";
 import {CurrentPage, Project} from "@/app/_types/Project";
-import {getAllProjects, getProjectById} from "@/app/portfolio/_api/projects/route";
+import {getAllProjects, getProjectById} from "@/app/portfolio/api/projects/route";
 import LoadingMessage from "@/app/portfolio/components/LoadingMessage";
 
 

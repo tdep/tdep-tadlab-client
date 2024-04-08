@@ -1,5 +1,5 @@
 import {Job, JobsResponse} from "@/app/_types/Job";
-import {TADLAB_API_URL, X_API_KEY} from "@/app/portfolio/lib/constants";
+import {TADLAB_API_URL, X_API_KEY} from "@/app/portfolio/lib/_constants";
 
 export const dynamic = 'force-dynamic'
 

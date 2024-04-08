@@ -1,6 +1,6 @@
 import styles from "./page.module.css";
 import Link from "next/link";
-import {TADLAB_API_URL} from "@/app/portfolio/lib/constants";
+import {TADLAB_API_URL} from "@/app/portfolio/lib/_constants";
 
 export default function Home() {
 
