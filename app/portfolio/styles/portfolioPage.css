@@ -30,8 +30,8 @@
 }
 
 :focus {
-    outline-offset: 0.25rem;
-    outline: 0.25rem dashed var(--color-primary);
+    /*outline-offset: 0.25rem;*/
+    /*outline: 0.25rem dashed var(--color-primary);*/
 }
 
 *,

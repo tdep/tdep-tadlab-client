@@ -32,8 +32,8 @@ const ProjectCard = (project:Project) => {
             <div className={"card-title-container"}>
                 <h3>{thisProject.title}</h3>
                 <ul className={""}>
-                    {titleLinks.demo.length > 0 ? <li><a href={titleLinks.demo}>Demo</a></li> : ""}
-                    {titleLinks.github.length > 0 ? <li><a href={titleLinks.github}>GitHub</a></li> : ""}
+                    {titleLinks.demo.length > 0 ? <li><a href={titleLinks.demo} target={"_blank"}>Demo</a></li> : ""}
+                    {titleLinks.github.length > 0 ? <li><a href={titleLinks.github} target={"_blank"}>GitHub</a></li> : ""}
                 </ul>
             </div>
     )
