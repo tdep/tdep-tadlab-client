@@ -546,14 +546,6 @@ ABOUT
     background-color: var(--color-secondary);
 }
 
-#about #photo:hover {
-    transform:scale(3.5);
-    width: fit-content;
-    object-fit: fill;
-    cursor: pointer;
-    z-index: 10;
-}
-
 #about #text-container {
     display: inline;
     flex-direction: row;
