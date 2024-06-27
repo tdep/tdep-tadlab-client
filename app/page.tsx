@@ -1,19 +1,15 @@
 import styles from "./page.module.css";
-import Link from "next/link";
-import {TADLAB_API_URL} from "@/app/portfolio/lib/_constants";
+import Title from "@/app/components/title";
+import Blurb from "@/app/components/blurb";
+import HomeNav from "@/app/components/homeNav";
 
 export default function Home() {
 
-    const http = require('http');
-
-    setInterval(() => {
-        http.get(`${TADLAB_API_URL}`);
-    }, 25 * 60 * 1000);
-
   return (
     <main className={styles.main}>
-      <h1>Yar, thar be dragons here.</h1>
-      <Link href={"/portfolio"}>Portfolio</Link>
+        <Title/>
+        <Blurb/>
+        <HomeNav/>
     </main>
   );
 }
