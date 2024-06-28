@@ -1,8 +1,7 @@
 // import JobsComponent from "@/app/portfolio/components/jobsComponent";
 import React, {useEffect, useState} from "react";
 import JobsComponent from "@/app/portfolio/components/experience/jobsComponent";
-import {getAllJobs} from "@/app/portfolio/_api/jobs/route";
-import {Job, JobsResponse} from "@/app/_types/Job";
+import "../../styles/experience.css"
 
 export default function Experience() {
 

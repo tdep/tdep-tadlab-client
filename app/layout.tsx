@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
+import "./styles/globals.css";
 import React from "react";
-import NavPanel from "@/app/_includes/navPanel";
+import Header from "@/app/_includes/header";
+import Footer from "@/app/_includes/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Trevor DePew",
-  description: "Software Engineering Portfolio",
+  title: "Trevor DePew - TadLab",
+  description: "Personal Website",
 };
 
 export default function RootLayout({
@@ -19,6 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+      <Header/>
         <main>{children}</main>
       </body>
     </html>

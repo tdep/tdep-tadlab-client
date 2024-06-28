@@ -2,6 +2,7 @@ import ProjectCarousel from "@/app/portfolio/components/projects/projectCarousel
 import {useState} from "react";
 import Pagination from "@/app/portfolio/components/Pagination";
 import {CurrentPage} from "@/app/_types/Project";
+import "../../styles/projects.css"
 
 export default function Projects() {
     const [currentPage, setCurrentPage] = useState(1);

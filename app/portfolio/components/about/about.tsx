@@ -1,4 +1,5 @@
 import portrait from "@/app/portfolio/public/images/profile_trevor.png"
+import "../../styles/about.css"
 
 export default function About() {
     return (
