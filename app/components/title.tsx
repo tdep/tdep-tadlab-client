@@ -7,12 +7,12 @@ export default function Title() {
     return (
         <div className={"container"}>
             <div className={"name"}>
-                <img id={"name-first"} className={"home-name"} src={first.src} alt={"Trevor"} />
-                <img id={"name-last"} className={"home-name"} src={last.src} alt={"DePew"} />
+                <img id={"name-first"} className={"name-img"} src={first.src} alt={"Trevor"} />
+                <img id={"name-last"} className={"name-img"} src={last.src} alt={"DePew"} />
             </div>
             <div className={"title"}>
-                <img id={"title-software"} className={"home-title"} src={software.src} alt={"software"} />
-                <img id={"title-software"} className={"home-title"} src={engineer.src} alt={"engineer"} />
+                <img id={"title-software"} className={"title-img"} src={software.src} alt={"software"} />
+                <img id={"title-software"} className={"title-img"} src={engineer.src} alt={"engineer"} />
             </div>
         </div>
 

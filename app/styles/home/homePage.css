@@ -1,0 +1,57 @@
+@import "../../styles/components/buttons.css";
+
+.home {
+    display: flex;
+    flex-direction: row;
+}
+
+/*
+Title
+*/
+
+.name {
+    display: inline-flex;
+    flex-direction: column;
+    margin-right: 0.5em;
+}
+
+.name-img {
+    height: 10em;
+    margin-bottom: 0.5em;
+}
+
+.title {
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.title-img {
+    height: 6em;
+    margin-top: 0.5em;
+}
+
+/*
+Blurb/Nav/Login
+*/
+
+.blurb-box {
+    margin-left: 1em;
+    padding: 1em;
+    background: rgba(100, 110 , 100, 0.5);
+    border: 10px double var(--color-secondary);
+    color: var(--color-secondary);
+}
+
+/*
+Nav
+*/
+
+.home-nav .button {
+
+}
+
+.link {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}

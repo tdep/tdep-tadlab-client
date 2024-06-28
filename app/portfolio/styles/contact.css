@@ -44,7 +44,7 @@ CONTACT
     justify-content: left;
 }
 
-#contact .link-social {
+#contact .button {
     text-decoration: none;
     color: var(--color-primary);
     font-size: 1rem;
@@ -57,7 +57,7 @@ CONTACT
     margin: 0.5em 0.25em;
 }
 
-#contact .link-social:hover {
+#contact .button:hover {
     background-color: var(--color-primary);
     color: var(--color-secondary);
     border: 3px solid var(--color-primary);

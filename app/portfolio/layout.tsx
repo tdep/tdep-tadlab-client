@@ -1,5 +1,6 @@
 import React from "react";
 import './styles/portfolioPage.css'
+import Header from "@/app/_includes/header";
 
 export default function PortfolioLayout({
     children,
@@ -8,6 +9,7 @@ export default function PortfolioLayout({
 }) {
   return (
       <section>
+          <Header />
         {children}
       </section>
   )
