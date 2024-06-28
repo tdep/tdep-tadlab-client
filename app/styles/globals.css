@@ -64,6 +64,7 @@ html,
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
   --color-primary: #000;
+  --color-primary-light: #555;
   --color-primary-alt: #ddd;
   --color-secondary: #fff;
   --color-secondary-disabled: #9ca3af;

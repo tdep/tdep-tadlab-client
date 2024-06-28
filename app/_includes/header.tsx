@@ -9,7 +9,6 @@ export default function Header() {
                 <div className={"name"}>
                     <h1>Trevor DePew</h1>
                 </div>
-                <NavPanel />
                 <div className={"title"}>
                     <h1>Portfolio</h1>
                 </div>

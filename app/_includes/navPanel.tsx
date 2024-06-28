@@ -1,5 +1,3 @@
-import "../styles/navPanel.css"
-
 export default function NavPanel() {
     return (
         <nav className={"main-nav"}>
