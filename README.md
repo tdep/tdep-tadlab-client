@@ -1,7 +1,10 @@
-# TadLab Client
+# Personal Website Client v3
+
+## I recently decommissioned this client in favor of a new site that is simpler and easier to expand upon.
 This is the frontend component of my personal website which uses Next.js as both a frontend and backend-for-frontend.
 
-To see it live, [checkout my website here!](https://www.trevordepew.com/portfolio)
+[See the repo for the new website here!](https://github.com/tdep/trevordepew.com)
+[Or, heckout my website here!](https://www.trevordepew.com/portfolio)
 
 ### Tools:
 - Next.js
