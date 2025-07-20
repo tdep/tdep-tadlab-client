@@ -4,7 +4,7 @@
 This is the frontend component of my personal website which uses Next.js as both a frontend and backend-for-frontend.
 
 [See the repo for the new website here!](https://github.com/tdep/trevordepew.com)
-[Or, heckout my website here!](https://www.trevordepew.com/portfolio)
+[Or, checkout my website here!](https://www.trevordepew.com/portfolio)
 
 ### Tools:
 - Next.js
